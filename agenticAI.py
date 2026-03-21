@@ -9,6 +9,20 @@ from openai import OpenAI
 from langgraph.graph import StateGraph, END
 from PIL import Image
 
+import os
+import json
+import streamlit as st
+
+st.write("Current working directory:", os.getcwd())
+st.write("Dataset exists:", os.path.exists("curated_dataset.json"))
+st.write("Images folder exists:", os.path.exists("STM_images"))
+
+with open("curated_dataset.json", "r", encoding="utf-8") as f:
+    dataset = json.load(f)
+
+st.write("Loaded dataset entries:", len(dataset))
+st.write("First image path:", dataset[0]["image_paths"][0] if dataset else "No data")
+
 try:
     import torch
 except Exception:
