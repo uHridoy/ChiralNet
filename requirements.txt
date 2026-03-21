@@ -6,3 +6,9 @@ langchain-openai
 pandas
 openpyxl
 Pillow
+torch
+torchvision
+ftfy
+regex
+tqdm
+git+https://github.com/openai/CLIP.git
