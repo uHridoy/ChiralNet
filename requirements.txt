@@ -1,5 +1,8 @@
 streamlit
 openai
+langgraph
+langchain
+langchain-openai
 pandas
 openpyxl
 Pillow
