@@ -1,6 +1,0 @@
-streamlit
-openai
-langgraph
-pillow
-torch
-open-clip-torch
