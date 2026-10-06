@@ -55,24 +55,9 @@ Then, in the browser:
 
 All three agents run on Claude Fable 5.1 (`claude-fable-5-1`) at temperature 1.0 with medium reasoning effort. The model assignment is set in `AGENT_MODELS` in `core_pipeline.py`.
 
-## Citation
+## Support
 
-If you use ChiralNet, please cite:
+If you encounter any issues or have questions, please open a GitHub issue.
 
-```bibtex
-@article{hridoy2026chiralnet,
-  title   = {Harnessing symmetry-reasoning AI agents for chiral charge-order discovery in quantum materials},
-  author  = {Hridoy, Hossain and Chowdhury, Tahiya and Chen, Pochang and Lien, Chun-Tung and Hossain, Md Shafayat},
-  journal = {[to be added]},
-  year    = {2026},
-  doi     = {[to be added]}
-}
-```
-
-## License
-
-[Add a license, e.g. MIT or BSD-3-Clause, and include a `LICENSE` file.]
-
-## Contact
-
-Correspondence: Md Shafayat Hossain (mshossain@g.ucla.edu). For bugs and feature requests, please open a GitHub issue.
+---
+Thank you for using ChiralNet! We hope it helps you discover new chiral CDW materials.
