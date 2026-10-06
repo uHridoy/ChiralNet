@@ -2,34 +2,9 @@
 
 **Symmetry-reasoning AI agents for detecting chiral charge order in STM/STS data**
 
-ChiralNet determines whether a scanning tunneling microscopy (STM) topograph, optionally accompanied by a d*I*/d*V* map, shows a charge-density wave (CDW), and whether that CDW is chiral. It combines a deterministic symmetry-analysis layer with three specialist vision-language agents and requires no task-specific training.
+ChiralNet determines whether a scanning tunneling microscopy (STM) topograph, accompanied by a d*I*/d*V* map, shows a charge-density wave (CDW), and whether that CDW is chiral. It combines a deterministic symmetry-analysis layer with three specialist vision-language agents and requires no task-specific training.
 
 ---
-
-## Why ChiralNet
-
-In STM, chirality is usually inferred from an ordering of the intensities of the three CDW Fourier peaks. That ordering can also arise from achiral anisotropy, finite domains, and instrumental artifacts such as tip shape, drift, and strain. ChiralNet therefore does not treat an intensity ordering as evidence of handedness.
-
-- **Measurement is separated from judgment.** Every quantity on which a decision depends is computed deterministically before any agent runs. The agents interpret these measurements but never produce or alter them.
-- **Handedness comes from symmetry tests.** A handedness is assigned only by tests that do not rely on the intensity ordering: a lattice-referenced registry-phase test of mirror symmetry and a structural test of superlattice rotation.
-- **Uncertainty is reported, not hidden.** When no robust test can decide, ChiralNet withholds a handedness and says why, rather than guessing.
-
-## How it works
-
-<!-- Add the architecture schematic (Fig. 1 of the paper), e.g. docs/fig1.png -->
-<!-- ![ChiralNet architecture](docs/fig1.png) -->
-
-1. **Deterministic layer.** Loads the data, computes the Fourier transforms, detects Bragg and superlattice peaks, and identifies the lattice and candidate superlattice cells. It then runs the chirality-related measurements:
-   - **Intensity anisotropy.** The CDW intensity anisotropy α is screened against a threshold calibrated by forward modelling (α<sub>crit</sub> = 0.310).
-   - **Hierarchy diagnostics.** Intensity-hierarchy diagnostics characterize the peak ordering but never assign a handedness.
-   - **Registry-phase test.** Tests mirror symmetry of the CDW relative to the atomic lattice on all six mirror axes.
-   - **Structural test.** Tests whether the superlattice is rotated against the lattice.
-2. **Specialist agents, run in sequence.**
-   - **Moiré agent:** decides between moiré interference and charge order. It is the only agent with tools, which return the measured periodicities, the lattice identification, and the peak table.
-   - **Topographic agent:** decides from the topograph's Fourier transform whether a CDW is present.
-   - **Spectroscopy agent:** judges the organization of the CDW in the d*I*/d*V* transform. It runs only when a d*I*/d*V* map is supplied and never infers handedness from peak amplitudes.
-3. **Label reconciliation and judge.** The spectroscopy label is checked against the registry-phase verdict. A rule-based judge then assigns the final label: `Non-CDW`, `CDW`, `Chance of Chiral CDW`, `Chiral CDW`, or `Inconclusive`.
-4. **Chiral-CDW metrology.** A deterministic 0–100 score summarizes the evidence behind each result. It combines an anisotropy criterion (40 points), a handedness criterion (20 points), and a judge criterion (40 points). A measurement-only score that excludes the agents is also reported.
 
 ## Repository structure
 
