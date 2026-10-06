@@ -4,10 +4,6 @@
 
 ChiralNet determines whether a scanning tunneling microscopy (STM) topograph, optionally accompanied by a d*I*/d*V* map, shows a charge-density wave (CDW), and whether that CDW is chiral. It combines a deterministic symmetry-analysis layer with three specialist vision-language agents and requires no task-specific training.
 
-This repository contains the code and data accompanying:
-
-> H. Hridoy, T. Chowdhury, P. Chen, C.-T. Lien, M. S. Hossain. *Harnessing symmetry-reasoning AI agents for chiral charge-order discovery in quantum materials.* (2026). [Journal reference and DOI to be added.]
-
 ---
 
 ## Why ChiralNet
