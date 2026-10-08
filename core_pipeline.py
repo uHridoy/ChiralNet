@@ -295,7 +295,7 @@ def _run_tool_loop_anthropic(spec: Dict[str, str], system_prompt: str,
     for round_index in range(max_rounds + 1):
         kwargs: Dict[str, Any] = dict(
             model=spec["id"], system=system_prompt, messages=messages,
-            max_tokens=max_tokens, temperature=1.0,
+            max_tokens=max_tokens,
             output_config={"effort": "medium"})
         if tools and round_index < max_rounds:
             kwargs["tools"] = _anthropic_tools(tools)
