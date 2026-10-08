@@ -2,7 +2,7 @@
 
 **Symmetry-reasoning AI agents for detecting chiral charge order in STM/STS data**
 
-ChiralNet determines whether a scanning tunneling microscopy (STM) topograph, accompanied by a d*I*/d*V* map, shows a charge-density wave (CDW), and whether that CDW is chiral. It combines a deterministic symmetry-analysis layer with three specialist vision-language agents and requires no task-specific training.
+ChiralNet determines whether a scanning tunneling microscopy (STM) topograph, accompanied by a d*I*/d*V* map, shows a charge-density wave (CDW), and whether that CDW is chiral. It combines a deterministic symmetry-analysis layer with specialist vision-language agents and requires no task-specific training.
 
 ---
 
@@ -11,7 +11,7 @@ ChiralNet determines whether a scanning tunneling microscopy (STM) topograph, ac
 | Path | Contents |
 |---|---|
 | `ui.py` | Streamlit web application (entry point) |
-| `core_pipeline.py` | LangGraph workflow: deterministic nodes, the three agents, label reconciliation, the judge, and the metrology step |
+| `core_pipeline.py` | LangGraph workflow: deterministic nodes, agents, label reconciliation, the judge, and the metrology step |
 | `stm_data_io.py` | Data loaders for images and native Nanonis files, with channel and bias selection |
 | `fft_core.py` | Preprocessing, windowed Fourier transforms, and the figures shown to the agents |
 | `fft_peak_analysis.py` | Peak detection, hexagonal-family grouping, Bragg identification, and superlattice models |
@@ -53,7 +53,7 @@ Then, in the browser:
 
 ## Model and reproducibility
 
-All three agents run on Claude Fable 5.1 (`claude-fable-5-1`) at temperature 1.0 with medium reasoning effort. The model assignment is set in `AGENT_MODELS` in `core_pipeline.py`.
+All agents run on Claude Fable 5.1 (`claude-fable-5-1`) at temperature 1.0 with medium reasoning effort. The model assignment is set in `AGENT_MODELS` in `core_pipeline.py`.
 
 ## Support
 
