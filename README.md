@@ -53,7 +53,7 @@ Then, in the browser:
 
 ## Model and reproducibility
 
-All agents run on Claude Fable 5.1 (`claude-fable-5-1`) at temperature 1.0 with medium reasoning effort. The model assignment is set in `AGENT_MODELS` in `core_pipeline.py`.
+All agents run on Claude Fable 5.1 (`claude-fable-5-1`) with medium reasoning effort. The model assignment is set in `AGENT_MODELS` in `core_pipeline.py`.
 
 ## Support
 
